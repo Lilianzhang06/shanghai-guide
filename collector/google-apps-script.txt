@@ -1,0 +1,114 @@
+═══════════════════════════════════════════════════
+  表单数据收集 — Google 表格（一次性配置，约 5 分钟）
+═══════════════════════════════════════════════════
+
+所有 HTML 页面的表单提交都会写入同一张 Google 表格，
+后续新增表单字段无需改脚本，自动记录 JSON。
+
+步骤：
+
+1. 打开 https://sheets.google.com 新建表格，命名如「Lianye Form Responses」
+
+2. 菜单：扩展程序 → Apps Script，删除默认代码，粘贴下方脚本，保存
+
+3. 点击「部署」→「新建部署」
+   - 类型：Web 应用
+   - 执行身份：我
+   - 访问权限：任何人
+   - 部署后复制「Web 应用 URL」
+
+4. 打开 插图/form-collector.js，把 URL 填入：
+   const COLLECTOR_URL = '粘贴你的 URL';
+
+5. 刷新页面，老师提交后数据出现在表格「responses」工作表中
+
+───────────────────────────────────────────────────
+Apps Script 代码（复制全部）：
+───────────────────────────────────────────────────
+
+function doPost(e) {
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName('responses');
+    if (!sheet) {
+      sheet = ss.insertSheet('responses');
+      sheet.appendRow(['submitted_at', 'form_id', 'page', 'page_title', 'fields_json']);
+      sheet.getRange(1, 1, 1, 5).setFontWeight('bold');
+    }
+
+    var body = JSON.parse(e.postData.contents);
+    sheet.appendRow([
+      body.submittedAt || new Date().toISOString(),
+      body.formId || '',
+      body.page || '',
+      body.pageTitle || '',
+      JSON.stringify(body.fields || {})
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: String(err) }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doGet() {
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'ok', message: 'Form collector is running.' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+───────────────────────────────────────────────────
+表格列说明：
+  submitted_at  — 提交时间
+  form_id       — 表单标识（见下方表单列表）
+  page          — 来源页面文件名
+  page_title    — 页面标题
+  fields_json   — 所有字段 JSON
+
+每次提交会自动附带 respondent_* 字段（若曾填写过）：
+  respondent_name
+  用于把 Part 1–6 的多次提交关联到同一位老师。
+
+───────────────────────────────────────────────────
+表单与字段一览（shanghai-guide.html）
+───────────────────────────────────────────────────
+
+【shanghai-guide】整页一次提交，包含 Part 1–6 全部字段。
+提交后 fields_json 中会包含下列键（选填项若留空则不出现在 JSON 中）：
+
+  Part 1 · 时间与姓名
+    availability     必填，数组，如 ["Saturday, June 6 — Afternoon", "Sunday, June 7 — Morning"]
+    name             选填
+    respondent_name  自动附带（若本次或以往填写过 name）
+
+  Part 2 · 景点（visit 必填，notes 选填）
+    bund_visit       bund_notes
+    museum_visit     museum_notes
+    yugarden_visit   yugarden_notes
+
+  Part 3 · 智驾体验
+    m9_visit         m9_notes
+
+  Part 4 · 美食
+    hotpot_visit     hotpot_notes
+    sichuan_visit    sichuan_notes
+    benbang_visit    benbang_notes
+    dietary_notes    选填（Part 4 底部饮食需求）
+
+  Part 6 · 留言板
+    guest_message    选填
+
+  visit / try 类 radio 取值：
+    "I'd like to visit" | "Prefer to skip" | "I'd like to try"
+
+  必填校验（未填则无法提交）：
+    availability
+    bund_visit, museum_visit, yugarden_visit
+    m9_visit
+    hotpot_visit, sichuan_visit, benbang_visit
+
+新增表单时：在 HTML 的 <form> 上加 data-form-id="你的表单名" 即可。
