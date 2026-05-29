@@ -5,7 +5,7 @@
  * 部署方法见同目录 collector/google-apps-script.txt
  */
 const FormCollector = (function () {
-  const COLLECTOR_URL = '';
+  const COLLECTOR_URL = 'https://script.google.com/macros/s/AKfycbzxc3dgL0aT2aVddLYM7PtQerpoAmHWzsKCNdFEkd4wWJ-baeA0s8N2quy3BmLaqfyX/exec';
   const IDENTITY_KEY = 'shanghai-guide-identity';
   const IDENTITY_FIELDS = ['name'];
 
