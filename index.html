@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a2a4a" />
+  <meta name="description" content="A personal guide to Shanghai for Tram and Marius — schedule, places, food, and preferences form for June 6–7." />
+  <meta property="og:title" content="Shanghai · A Little Guide for You" />
+  <meta property="og:description" content="Help lianye plan your Shanghai visit — times, places, food & more." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://lilianzhang06.github.io/shanghai-guide/" />
+  <title>Shanghai · A Little Guide for You</title>
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --text: #1c1c1c;
+      --muted: #5c5c5c;
+      --accent: #c41e3a;
+      --accent-soft: #fdf0f2;
+      --gold: #b8860b;
+      --navy: #1a2a4a;
+      --teal: #2d6a6a;
+      --shadow: 0 4px 24px rgba(26, 42, 74, 0.08);
+      --radius: 16px;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --icon-stroke: 1.75;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding-bottom: calc(24px + var(--safe-bottom));
+    }
+
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: var(--icon-stroke);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 38vh;
+      min-height: 38dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: calc(12px + var(--safe-top)) 20px 28px;
+      background-color: #7eb3e8;
+      background-image:
+        linear-gradient(180deg, rgba(80, 140, 220, 0.12) 0%, rgba(26, 58, 118, 0.52) 100%),
+        url('pic/ScreenShot_2026-05-29_132144_691.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1,
+    .hero p {
+      text-shadow: 0 1px 10px rgba(20, 50, 110, 0.35);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-badge .icon { width: 14px; height: 14px; }
+
+    .hero h1 {
+      font-size: clamp(28px, 8vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: clamp(14px, 3.8vw, 16px);
+      opacity: 0.9;
+      max-width: 340px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 520px;
+      margin: -20px auto 0;
+      padding: 0 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .intro-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .intro-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .intro-card p + p {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(0,0,0,0.08);
+    }
+
+    .intro-card strong {
+      color: var(--navy);
+    }
+
+    .intro-note {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .intro-note .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .intro-note strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 14px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 8px 14px;
+      background: var(--surface);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .quick-nav a .icon {
+      width: 16px;
+      height: 16px;
+      color: var(--accent);
+    }
+
+    .quick-nav a:active {
+      opacity: 0.85;
+    }
+
+    .section-note {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: -6px 0 14px;
+      padding: 12px 14px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* Section */
+    .section {
+      max-width: 520px;
+      margin: 28px auto 0;
+      padding: 0 16px;
+      scroll-margin-top: 12px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-head .icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(26, 42, 74, 0.06);
+    }
+
+    .section-head .icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+
+    .section-head .icon-wrap--times {
+      background: #eef4fc;
+      color: #2d5a9e;
+    }
+
+    .section-head .icon-wrap--places {
+      background: #edf7f6;
+      color: var(--teal);
+    }
+
+    .section-head h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .section-head span {
+      font-size: 12px;
+      color: var(--muted);
+      display: block;
+      font-weight: 400;
+    }
+
+    .section-part {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.55;
+      margin-bottom: 2px;
+    }
+
+    .section-head .icon-wrap--ev {
+      background: #eef0f4;
+      color: #3d4f5f;
+    }
+
+    .section-head .icon-wrap--food {
+      background: #fdf5eb;
+      color: #b45309;
+    }
+
+    .section-head .icon-wrap--practical {
+      background: #eef6ff;
+      color: #2563eb;
+    }
+
+    .section-head .icon-wrap--message {
+      background: #f3efff;
+      color: #6d28d9;
+    }
+
+    .message-board {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 18px 16px 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .message-board::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #e8b923, var(--teal));
+    }
+
+    .message-board-intro {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .message-board-field {
+      width: 100%;
+      min-height: 140px;
+      padding: 14px 14px;
+      font-size: 15px;
+      font-family: inherit;
+      line-height: 1.6;
+      border: 1px solid #e2e6ea;
+      border-radius: 12px;
+      background: #fdfcf9;
+      color: var(--text);
+      resize: vertical;
+    }
+
+    .message-board-field:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(26, 42, 74, 0.1);
+      background: #fff;
+    }
+
+    .message-board-field::placeholder {
+      color: #9aa3ad;
+    }
+
+    .message-board-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .practical-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .practical-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .practical-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .practical-item .icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .practical-item .icon-wrap svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .practical-item p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      padding-top: 7px;
+    }
+
+    .practical-footer {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(0,0,0,0.08);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .practical-footer .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .section-intro {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 14px;
+    }
+
+    .section-intro p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .section-intro p + p {
+      margin-top: 12px;
+    }
+
+    .section-intro a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* Place cards */
+    .places {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .place {
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .place-visual {
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      padding: 14px 16px;
+      position: relative;
+      overflow: hidden;
+      background-color: #1a2a4a;
+    }
+
+    .place-visual-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .place-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55) 100%);
+    }
+
+    .place-num {
+      position: relative;
+      z-index: 1;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(0,0,0,0.35);
+      padding: 3px 8px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .place-name-en {
+      position: relative;
+      z-index: 1;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 4px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    }
+
+    .place--1 .place-visual { background: #1a2a4a; }
+    .place--2 .place-visual { background: #3a2a4a; }
+    .place--3 .place-visual { background: #5c3a2a; }
+    .place--ev .place-visual {
+      background: linear-gradient(135deg, #1a1f2e 0%, #2d3a4f 50%, #1e2838 100%);
+    }
+    .place--4 .place-visual { background: #6b3a2a; }
+    .place--6 .place-visual { background: #4a3728; }
+    .place--7 .place-visual { background: #8b2a2a; }
+
+    .place-body {
+      padding: 16px 16px 18px;
+    }
+
+    .place-cn {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .place-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .place-rating-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+
+    .place-stars {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .place-stars .star {
+      width: 15px;
+      height: 15px;
+      color: #ddd;
+    }
+
+    .place-stars .star.is-filled {
+      color: #e8b923;
+      fill: #e8b923;
+    }
+
+    .place-stars .star svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linejoin: round;
+    }
+
+    .place-stars .star.is-filled svg {
+      fill: currentColor;
+      stroke: #d4a017;
+    }
+
+    .place-desc {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .place-desc a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .section-intro a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .place-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--muted);
+    }
+
+    .tag--highlight {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* Place preference (per spot) */
+    .place-feedback {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed #e8ecf0;
+    }
+
+    .place-time-tip {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+      padding: 8px 10px;
+      background: #f4f6f8;
+      border-radius: 8px;
+      line-height: 1.45;
+    }
+
+    .place-time-tip .icon {
+      width: 14px;
+      height: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .place-feedback-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .place-feedback-label .icon {
+      width: 16px;
+      height: 16px;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .visit-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      border: none;
+      padding: 0;
+      margin: 0 0 12px;
+    }
+
+    .visit-option {
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+
+    .visit-option input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .visit-option-face {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 2px solid #e8ecf0;
+      background: var(--bg);
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--navy);
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .visit-option-face .option-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+
+    .visit-option input:checked + .visit-option-face .option-icon {
+      color: var(--navy);
+    }
+
+    .visit-option--yes input:checked + .visit-option-face .option-icon {
+      color: #2d8a5e;
+    }
+
+    .visit-option--skip input:checked + .visit-option-face .option-icon {
+      color: var(--muted);
+    }
+
+    .visit-option input:checked + .visit-option-face {
+      border-color: var(--navy);
+      background: var(--accent-soft);
+    }
+
+    .visit-option input:focus-visible + .visit-option-face {
+      outline: 2px solid var(--navy);
+      outline-offset: 2px;
+    }
+
+    .place-notes-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .place-notes {
+      width: 100%;
+      min-height: 64px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: inherit;
+      border: 1px solid #e2e6ea;
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--text);
+      resize: vertical;
+    }
+
+    .place-notes:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(26, 42, 74, 0.1);
+    }
+
+    .places-submit {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .places-submit .submit-btn {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .places-form-error {
+      font-size: 13px;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    .places-form-error.is-visible { display: block; }
+
+    .places-form-success {
+      display: none;
+      text-align: center;
+      padding: 16px;
+      background: #f0f7f4;
+      border: 1px solid #b8dcc8;
+      border-radius: var(--radius);
+      margin-top: 14px;
+      font-size: 14px;
+      color: #2d8a5e;
+      font-weight: 600;
+    }
+
+    .places-form-success.is-visible { display: block; }
+
+    /* Availability form */
+    .availability-form {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 6px;
+    }
+
+    .availability-form .form-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .time-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      border: none;
+      padding: 0;
+      margin: 0 0 10px;
+    }
+
+    .time-option {
+      position: relative;
+      display: block;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .time-option input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .time-option-face {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      grid-template-rows: auto auto;
+      align-items: center;
+      column-gap: 8px;
+      row-gap: 1px;
+      min-height: 0;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e6ea;
+      background: var(--surface);
+      text-align: left;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+
+    .time-option:active .time-option-face {
+      transform: scale(0.98);
+    }
+
+    .time-option-face .option-icon {
+      grid-row: 1 / -1;
+      width: 18px;
+      height: 18px;
+      color: var(--gold);
+      align-self: center;
+      transition: color 0.2s;
+    }
+
+    .time-option input:checked + .time-option-face .option-icon {
+      color: var(--accent);
+    }
+
+    .time-option input:checked + .time-option-face {
+      border-color: rgba(196, 30, 58, 0.35);
+      background: var(--accent-soft);
+      box-shadow: 0 4px 14px rgba(196, 30, 58, 0.1);
+    }
+
+    .time-option input:focus-visible + .time-option-face {
+      outline: 2px solid rgba(196, 30, 58, 0.45);
+      outline-offset: 2px;
+    }
+
+    .time-option-day {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      line-height: 1.25;
+    }
+
+    .time-option-slot {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .time-option input:checked + .time-option-face .time-option-day {
+      color: var(--accent);
+    }
+
+    .time-option input:checked + .time-option-face .time-option-slot {
+      color: var(--navy);
+    }
+
+    .field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .field-input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      border: 1px solid #e2e6ea;
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--text);
+      margin-bottom: 14px;
+      font-family: inherit;
+    }
+
+    .field-input:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(26, 42, 74, 0.1);
+    }
+
+    .guide-submit {
+      max-width: 520px;
+      margin: 24px auto 0;
+      padding: 20px 16px calc(12px + var(--safe-bottom));
+      position: sticky;
+      bottom: 0;
+      z-index: 5;
+      background: linear-gradient(180deg, rgba(247,245,240,0) 0%, var(--bg) 32%);
+      backdrop-filter: blur(6px);
+    }
+
+    .guide-submit .submit-btn {
+      box-shadow: 0 4px 20px rgba(26, 42, 74, 0.18);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--navy);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .submit-btn:active { transform: scale(0.98); }
+
+    .submit-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .form-error {
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    .form-error.is-visible { display: block; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--q2-bg, #f0f7f4);
+      border: 1px solid #b8dcc8;
+      border-radius: var(--radius);
+      margin-bottom: 6px;
+    }
+
+    .form-success.is-visible { display: block; }
+
+    .form-success .icon {
+      width: 40px;
+      height: 40px;
+      color: #2d8a5e;
+      margin: 0 auto 12px;
+    }
+
+    .form-success h3 {
+      font-size: 17px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 520px;
+      margin: 28px auto 0;
+      padding: 0 16px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer .sign {
+      margin-top: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* Larger phones / small tablets */
+    @media (min-width: 400px) {
+      .place-visual { height: 140px; }
+    }
+
+    @media (min-width: 520px) {
+      .hero { min-height: 34vh; min-height: 34dvh; }
+      .intro-card, .place { border-radius: 18px; }
+    }
+
+    /* Landscape phones */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero {
+        min-height: auto;
+        padding-top: calc(16px + var(--safe-top));
+        padding-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M17 8h1a3 3 0 0 1 0 6h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 2.4 7.4H22l-6 4.6 2.3 7-6.3-4.6L5.7 21l2.3-7-6-4.6h7.6z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17h14v-5l-2-5H7L5 12v5z"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/><path d="M5 12h14"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3"/><path d="M4 21v-7"/><path d="M8 21v-7"/><path d="M18 3v18"/><path d="M14 3v6a4 4 0 0 0 8 0V3"/></symbol>
+    <symbol id="i-calendar-days" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M6 21V7l6-4 6 4v14"/><path d="M10 10h4v4h-4z"/></symbol>
+    <symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 18v4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+    <symbol id="i-circle-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+    <symbol id="i-help-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9a3 3 0 0 1 0 6v4h18v-4a3 3 0 0 1 0-6V5H3z"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></symbol>
+    <symbol id="i-cloud-rain" viewBox="0 0 24 24"><path d="M4 14a4 4 0 0 1 .88-7.9A5 5 0 0 1 18 9a3 3 0 0 1 0 6H4z"/><path d="M8 19v2M12 18v3M16 19v2"/></symbol>
+  </svg>
+
+  <header class="hero">
+    <div class="hero-badge">
+      <span class="icon" aria-hidden="true"><svg><use href="#i-map"/></svg></span>
+      Welcome to Shanghai
+    </div>
+    <h1>Welcome to China</h1>
+    <p>A little note from lianye — about Shanghai &amp; our schedule</p>
+  </header>
+
+  <div class="intro">
+    <div class="intro-card">
+      <p>Hi Tram and Marius,</p>
+      <p>
+        I'm finalizing my travel plans and will arrive on the afternoon of Saturday, June 6.
+        I'd like to arrange our meeting around your schedule.
+        Also, could I check if you're available on Sunday, June 7?
+        I'm completely flexible on Sunday. If you'd like to explore together, I'd be honored to show you around;
+        but if you have other arrangements or need rest, please don't feel obligated to include me.
+      </p>
+      <p class="intro-note">
+        <span class="icon" aria-hidden="true"><svg><use href="#i-info"/></svg></span>
+        <span>
+          I've selected these spots based on my own experience. Most of them are free to visit,
+          and for any that require tickets or reservations, I'll take care of all the necessary bookings.
+        </span>
+      </p>
+    </div>
+    <nav class="quick-nav" aria-label="Page sections">
+      <a href="#part-times"><span class="icon" aria-hidden="true"><svg><use href="#i-calendar-days"/></svg></span>Times</a>
+      <a href="#part-places"><span class="icon" aria-hidden="true"><svg><use href="#i-landmark"/></svg></span>Places</a>
+      <a href="#part-driving"><span class="icon" aria-hidden="true"><svg><use href="#i-car"/></svg></span>Driving</a>
+      <a href="#part-food"><span class="icon" aria-hidden="true"><svg><use href="#i-utensils"/></svg></span>Food</a>
+      <a href="#part-practical"><span class="icon" aria-hidden="true"><svg><use href="#i-map"/></svg></span>Arrival</a>
+      <a href="#part-message"><span class="icon" aria-hidden="true"><svg><use href="#i-message"/></svg></span>Message</a>
+    </nav>
+  </div>
+
+  <form id="shanghai-guide-form" class="guide-form" data-form-id="shanghai-guide" novalidate>
+
+  <section id="part-times" class="section" aria-labelledby="availability-title">
+    <div class="section-head">
+      <div class="icon-wrap icon-wrap--times" aria-hidden="true">
+        <svg><use href="#i-calendar-days"/></svg>
+      </div>
+      <div>
+        <p class="section-part">Part 1</p>
+        <h2 id="availability-title">Select Your Available Times</h2>
+        <span>Multiple selection allowed</span>
+      </div>
+    </div>
+
+    <div class="availability-form">
+      <p class="form-hint">Please tick all time slots that work for you.</p>
+
+      <fieldset class="time-options">
+        <legend class="sr-only">Available times</legend>
+        <label class="time-option">
+          <input type="checkbox" name="availability" value="Saturday, June 6 — Afternoon" />
+          <span class="time-option-face">
+            <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-sun"/></svg></span>
+            <span class="time-option-day">Saturday, June 6</span>
+            <span class="time-option-slot">Afternoon</span>
+          </span>
+        </label>
+        <label class="time-option">
+          <input type="checkbox" name="availability" value="Saturday, June 6 — Evening" />
+          <span class="time-option-face">
+            <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-moon"/></svg></span>
+            <span class="time-option-day">Saturday, June 6</span>
+            <span class="time-option-slot">Evening</span>
+          </span>
+        </label>
+        <label class="time-option">
+          <input type="checkbox" name="availability" value="Sunday, June 7 — Morning" />
+          <span class="time-option-face">
+            <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-sunrise"/></svg></span>
+            <span class="time-option-day">Sunday, June 7</span>
+            <span class="time-option-slot">Morning</span>
+          </span>
+        </label>
+        <label class="time-option">
+          <input type="checkbox" name="availability" value="Sunday, June 7 — Afternoon" />
+          <span class="time-option-face">
+            <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-sun"/></svg></span>
+            <span class="time-option-day">Sunday, June 7</span>
+            <span class="time-option-slot">Afternoon</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <label class="field-label" for="guest-name">Your name</label>
+      <input class="field-input" type="text" id="guest-name" name="name" placeholder="e.g. Professor Smith" autocomplete="name" />
+    </div>
+  </section>
+
+  <section id="part-places" class="section" aria-labelledby="places-title">
+    <div class="section-head">
+      <div class="icon-wrap icon-wrap--places" aria-hidden="true">
+        <svg><use href="#i-landmark"/></svg>
+      </div>
+      <div>
+        <p class="section-part">Part 2</p>
+        <h2 id="places-title">Places to Visit</h2>
+        <span>3 spots · historical roots &amp; modern pulse</span>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      <p>
+        I've shortlisted 3 spots that offer a mix of Shanghai's historical roots and its modern pulse.
+      </p>
+    </div>
+
+    <div class="places">
+      <article class="place place--1">
+        <div class="place-visual">
+          <img class="place-visual-img" src="pic/hund.png" alt="Shanghai skyline and Huangpu River viewed from the Bund" fetchpriority="high" />
+          <div>
+            <span class="place-num">01</span>
+            <p class="place-name-en">The Bund</p>
+          </div>
+        </div>
+        <div class="place-body">
+          <p class="place-cn">外滩 Wàitān</p>
+          <div class="place-rating" aria-label="5 star recommendation">
+            <span class="place-rating-label">Recommended</span>
+            <span class="place-stars" aria-hidden="true">
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+            </span>
+          </div>
+          <p class="place-desc">
+            <a href="https://zh.wikipedia.org/zh-hans/%E5%A4%96%E6%BB%A9" target="_blank" rel="noopener noreferrer">The Bund</a> lies beside the Huangpu River.
+            It offers a stunning contrast between the colonial-era architecture on one side and the futuristic Lujiazui skyline on the other.
+            It's the best place to witness Shanghai's transformation over the last century.
+          </p>
+          <div class="place-tags">
+            <span class="tag tag--highlight">Must-see</span>
+            <span class="tag">Evening</span>
+            <span class="tag">River views</span>
+          </div>
+
+          <div class="place-feedback">
+            <p class="place-feedback-label">
+              <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+              Would you like to visit?
+            </p>
+            <fieldset class="visit-options">
+              <legend class="sr-only">The Bund visit preference</legend>
+              <label class="visit-option visit-option--yes">
+                <input type="radio" name="bund_visit" value="I'd like to visit" />
+                <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                  I'd like to visit
+                </span>
+              </label>
+              <label class="visit-option visit-option--skip">
+                <input type="radio" name="bund_visit" value="Prefer to skip" />
+                <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                  Prefer to skip
+                </span>
+              </label>
+            </fieldset>
+            <label class="place-notes-label" for="bund-notes">Notes (optional)</label>
+            <textarea class="place-notes" id="bund-notes" name="bund_notes" placeholder="Any comments or preferences…"></textarea>
+          </div>
+        </div>
+      </article>
+
+      <article class="place place--2">
+        <div class="place-visual">
+          <img class="place-visual-img" src="pic/shanghai%20museum.png" alt="Shanghai Museum building at People's Square" loading="lazy" decoding="async" />
+          <div>
+            <span class="place-num">02</span>
+            <p class="place-name-en">Shanghai Museum</p>
+          </div>
+        </div>
+        <div class="place-body">
+          <p class="place-cn">上海博物馆</p>
+          <div class="place-rating" aria-label="5 star recommendation">
+            <span class="place-rating-label">Recommended</span>
+            <span class="place-stars" aria-hidden="true">
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+            </span>
+          </div>
+          <p class="place-desc">
+            <a href="https://www.shanghaimuseum.net/mu/frontend/pg/index" target="_blank" rel="noopener noreferrer">Shanghai Museum</a> is widely considered one of China's best museums. It houses a world-class collection of ancient bronzes and ceramics.
+            The collection also includes Ming and Qing furniture and ethnic crafts.
+            It's very peaceful and full of history—perfect for taking your time and wandering around.
+            If you're a culture or history buff, you'll love it.
+          </p>
+          <div class="place-tags">
+            <span class="tag tag--highlight">Culture</span>
+            <span class="tag">Indoor</span>
+            <span class="tag">Free entry</span>
+          </div>
+
+          <div class="place-feedback">
+            <p class="place-time-tip">
+              <span class="icon" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
+              <span>Recommended time: Morning or afternoon (closes around 5:00 p.m.; last entry ~4:00 p.m.)</span>
+            </p>
+            <p class="place-feedback-label">
+              <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+              Would you like to visit?
+            </p>
+            <fieldset class="visit-options">
+              <legend class="sr-only">Shanghai Museum visit preference</legend>
+              <label class="visit-option visit-option--yes">
+                <input type="radio" name="museum_visit" value="I'd like to visit" />
+                <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                  I'd like to visit
+                </span>
+              </label>
+              <label class="visit-option visit-option--skip">
+                <input type="radio" name="museum_visit" value="Prefer to skip" />
+                <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                  Prefer to skip
+                </span>
+              </label>
+            </fieldset>
+            <label class="place-notes-label" for="museum-notes">Notes (optional)</label>
+            <textarea class="place-notes" id="museum-notes" name="museum_notes" placeholder="Any comments or preferences…"></textarea>
+          </div>
+        </div>
+      </article>
+
+      <article class="place place--3">
+        <div class="place-visual">
+          <img class="place-visual-img" src="pic/yu%20garden.png" alt="Yu Garden and Old Town at night" loading="lazy" decoding="async" />
+          <div>
+            <span class="place-num">03</span>
+            <p class="place-name-en">Yu Garden &amp; Old Town</p>
+          </div>
+        </div>
+        <div class="place-body">
+          <p class="place-cn">豫园 · 老城厢</p>
+          <div class="place-rating" aria-label="4 star recommendation">
+            <span class="place-rating-label">Recommended</span>
+            <span class="place-stars" aria-hidden="true">
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              <span class="star"><svg><use href="#i-star"/></svg></span>
+            </span>
+          </div>
+          <p class="place-desc">
+            <a href="https://www.yugarden.com.cn/page/articleView/index.html" target="_blank" rel="noopener noreferrer">Yu Garden</a> in Shanghai is a historic garden from the Ming Dynasty. With pavilions and buildings standing for more than 400 years,
+            it's a favorite spot to soak up the old Shanghai vibe. You can wander around and shop here,
+            and there are lots of unique Chinese-style stores to explore.
+            The surrounding Old Town area is also great for trying local snacks and seeing traditional crafts, though it can be quite bustling.
+          </p>
+          <div class="place-tags">
+            <span class="tag tag--highlight">History</span>
+            <span class="tag">Old Shanghai</span>
+            <span class="tag">Shopping</span>
+          </div>
+
+          <div class="place-feedback">
+            <p class="place-feedback-label">
+              <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+              Would you like to visit?
+            </p>
+            <fieldset class="visit-options">
+              <legend class="sr-only">Yu Garden visit preference</legend>
+              <label class="visit-option visit-option--yes">
+                <input type="radio" name="yugarden_visit" value="I'd like to visit" />
+                <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                  I'd like to visit
+                </span>
+              </label>
+              <label class="visit-option visit-option--skip">
+                <input type="radio" name="yugarden_visit" value="Prefer to skip" />
+                <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                  Prefer to skip
+                </span>
+              </label>
+            </fieldset>
+            <label class="place-notes-label" for="yugarden-notes">Notes (optional)</label>
+            <textarea class="place-notes" id="yugarden-notes" name="yugarden_notes" placeholder="Any comments or preferences…"></textarea>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="part-driving" class="section" aria-labelledby="driving-title">
+    <div class="section-head">
+      <div class="icon-wrap icon-wrap--ev" aria-hidden="true">
+        <svg><use href="#i-car"/></svg>
+      </div>
+      <div>
+        <p class="section-part">Part 3</p>
+        <h2 id="driving-title">Autonomous Driving Experience</h2>
+        <span>AITO M9 · smart driving in Shanghai</span>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      <p>
+        Since there are no smart vehicle expos during your visit, I'd suggest a showroom visit to see the <a href="https://aito.auto/model/m9-new/" target="_blank" rel="noopener noreferrer">AITO M9</a>.
+        It is a highly representative model in China's current EV landscape, particularly for its advanced software integration.
+        I can arrange an on-site demonstration of its features for us to explore together.
+      </p>
+    </div>
+
+      <div class="places">
+        <article class="place place--ev">
+          <div class="place-visual">
+            <img class="place-visual-img" src="pic/aitom9.png" alt="AITO M9 luxury SUV with roof-mounted LiDAR sensor" loading="lazy" decoding="async" />
+            <div>
+              <span class="place-num">AITO</span>
+              <p class="place-name-en">AITO M9</p>
+            </div>
+          </div>
+          <div class="place-body">
+            <p class="place-cn">AITO M9</p>
+            <div class="place-rating" aria-label="5 star recommendation">
+              <span class="place-rating-label">Recommended</span>
+              <span class="place-stars" aria-hidden="true">
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              </span>
+            </div>
+            <p class="place-desc">
+              The AITO M9 is a flagship smart SUV equipped with Huawei's intelligent driving system.
+              It is widely regarded as a benchmark for high-end domestic smart vehicles and has gained significant popularity nationwide.
+              It offers a good reference point for discussing the latest trends in the domestic automotive and tech sectors.
+            </p>
+            <div class="place-tags">
+              <span class="tag tag--highlight">Smart EV</span>
+              <span class="tag">Assisted driving</span>
+              <span class="tag">City tour</span>
+            </div>
+
+            <div class="place-feedback">
+              <p class="place-feedback-label">
+                <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+                Would you like to try it?
+              </p>
+              <fieldset class="visit-options">
+                <legend class="sr-only">AITO M9 experience preference</legend>
+              <label class="visit-option visit-option--yes">
+                  <input type="radio" name="m9_visit" value="I'd like to try" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                  I'd like to try
+                </span>
+                </label>
+                <label class="visit-option visit-option--skip">
+                  <input type="radio" name="m9_visit" value="Prefer to skip" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                  Prefer to skip
+                </span>
+                </label>
+              </fieldset>
+              <label class="place-notes-label" for="m9-notes">Notes (optional)</label>
+              <textarea class="place-notes" id="m9-notes" name="m9_notes" placeholder="e.g. motion sensitivity, preferred route…"></textarea>
+            </div>
+          </div>
+        </article>
+      </div>
+  </section>
+
+  <section id="part-food" class="section" aria-labelledby="food-title">
+    <div class="section-head">
+      <div class="icon-wrap icon-wrap--food" aria-hidden="true">
+        <svg><use href="#i-utensils"/></svg>
+      </div>
+      <div>
+        <p class="section-part">Part 4</p>
+        <h2 id="food-title">Food Experience</h2>
+        <span>Shared meals · taste China together</span>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      <p>
+        Shanghai is a culinary melting pot. While it has its own unique local flavors,
+        it's also the perfect place to experience the best dishes from all over China.
+      </p>
+    </div>
+
+      <div class="places">
+        <article class="place place--4">
+          <div class="place-visual">
+            <img class="place-visual-img" src="pic/hotpot.png" alt="Chinese hotpot with split spicy and mild broth, fresh ingredients, and diners toasting" loading="lazy" decoding="async" />
+            <div>
+              <span class="place-num">01</span>
+              <p class="place-name-en">Hot Pot</p>
+            </div>
+          </div>
+          <div class="place-body">
+            <p class="place-cn">火锅 · Huǒguō</p>
+            <div class="place-rating" aria-label="5 star recommendation">
+              <span class="place-rating-label">Recommended</span>
+              <span class="place-stars" aria-hidden="true">
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              </span>
+            </div>
+            <p class="place-desc">
+              <a href="https://zh.wikipedia.org/wiki/%E7%81%AB%E9%8D%8B" target="_blank" rel="noopener noreferrer">Hot pot</a> has a history of some 3,000 years in China. To us, it means so much more than just tasty food.
+              It's all about gathering together. Sitting around a steaming pot with friends instantly brings everyone closer.
+              What's more, different regions have developed their own unique styles of hot pot over the years.
+            </p>
+            <div class="place-tags">
+              <span class="tag tag--highlight">Must-try</span>
+              <span class="tag">Social dining</span>
+              <span class="tag">Evening</span>
+            </div>
+
+            <div class="place-feedback">
+              <p class="place-feedback-label">
+                <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+                Would you like to try?
+              </p>
+              <fieldset class="visit-options">
+                <legend class="sr-only">Hot pot preference</legend>
+                <label class="visit-option visit-option--yes">
+                  <input type="radio" name="hotpot_visit" value="I'd like to try" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                  I'd like to try
+                </span>
+                </label>
+                <label class="visit-option visit-option--skip">
+                  <input type="radio" name="hotpot_visit" value="Prefer to skip" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                  Prefer to skip
+                </span>
+                </label>
+              </fieldset>
+              <label class="place-notes-label" for="hotpot-notes">Notes (optional)</label>
+              <textarea class="place-notes" id="hotpot-notes" name="hotpot_notes" placeholder="e.g. mild broth only, no offal, vegetarian…"></textarea>
+            </div>
+          </div>
+        </article>
+
+        <article class="place place--7">
+          <div class="place-visual">
+            <img class="place-visual-img" src="pic/doufu.png" alt="Mapo tofu in spicy Sichuan chili sauce with green onions" loading="lazy" decoding="async" />
+            <div>
+              <span class="place-num">02</span>
+              <p class="place-name-en">Sichuan Cuisine</p>
+            </div>
+          </div>
+          <div class="place-body">
+            <p class="place-cn">川菜 · Chuāncài</p>
+            <div class="place-rating" aria-label="5 star recommendation">
+              <span class="place-rating-label">Recommended</span>
+              <span class="place-stars" aria-hidden="true">
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              </span>
+            </div>
+            <p class="place-desc">
+              I noticed you mentioned Mapo Tofu on your personal website. This dish belongs to <a href="https://zh.wikipedia.org/wiki/%E5%B7%9D%E8%8F%9C" target="_blank" rel="noopener noreferrer">Sichuan cuisine</a>
+              — it originates from Sichuan Province in western China. Sichuan cuisine is hugely popular across the whole of China,
+              featuring a spicy and numbing flavor profile. There are many delicious dishes in Sichuan cuisine that are well worth trying.
+            </p>
+            <div class="place-tags">
+              <span class="tag tag--highlight">Spicy &amp; numbing</span>
+              <span class="tag">Mapo Tofu</span>
+              <span class="tag">Western China</span>
+            </div>
+
+            <div class="place-feedback">
+              <p class="place-feedback-label">
+                <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+                Would you like to try?
+              </p>
+              <fieldset class="visit-options">
+                <legend class="sr-only">Sichuan cuisine preference</legend>
+                <label class="visit-option visit-option--yes">
+                  <input type="radio" name="sichuan_visit" value="I'd like to try" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                  I'd like to try
+                </span>
+                </label>
+                <label class="visit-option visit-option--skip">
+                  <input type="radio" name="sichuan_visit" value="Prefer to skip" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                  Prefer to skip
+                </span>
+                </label>
+              </fieldset>
+              <label class="place-notes-label" for="sichuan-notes">Notes (optional)</label>
+              <textarea class="place-notes" id="sichuan-notes" name="sichuan_notes" placeholder="e.g. mild spice, tofu only…"></textarea>
+            </div>
+          </div>
+        </article>
+
+        <article class="place place--6">
+          <div class="place-visual">
+            <img class="place-visual-img" src="pic/u%3D3089932328%2C2915735475%26fm%3D253%26app%3D138%26f%3DJPEG.jpeg" alt="Hong shao rou braised pork belly, classic Shanghainese benbang cuisine" loading="lazy" decoding="async" />
+            <div>
+              <span class="place-num">03</span>
+              <p class="place-name-en">Benbang Cuisine</p>
+            </div>
+          </div>
+          <div class="place-body">
+            <p class="place-cn">本帮菜 · Shanghai Local Dishes</p>
+            <div class="place-rating" aria-label="4 star recommendation">
+              <span class="place-rating-label">Recommended</span>
+              <span class="place-stars" aria-hidden="true">
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star"><svg><use href="#i-star"/></svg></span>
+              </span>
+            </div>
+            <p class="place-desc">
+              <a href="https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E8%8F%9C" target="_blank" rel="noopener noreferrer">Benbang cuisine</a> is Shanghai's local cooking style — slightly sweet, richly sauced, and deeply comforting.
+              Try red-braised pork (<em>hong shao rou</em>), scallion oil noodles, or smoked fish.
+              You can try the local specialties while you're in Shanghai.
+            </p>
+            <div class="place-tags">
+              <span class="tag tag--highlight">Local style</span>
+              <span class="tag">Sit-down meal</span>
+              <span class="tag">Sweet &amp; savory</span>
+            </div>
+
+            <div class="place-feedback">
+              <p class="place-feedback-label">
+                <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+                Would you like to try?
+              </p>
+              <fieldset class="visit-options">
+                <legend class="sr-only">Benbang cuisine preference</legend>
+                <label class="visit-option visit-option--yes">
+                  <input type="radio" name="benbang_visit" value="I'd like to try" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                  I'd like to try
+                </span>
+                </label>
+                <label class="visit-option visit-option--skip">
+                  <input type="radio" name="benbang_visit" value="Prefer to skip" />
+                  <span class="visit-option-face">
+                  <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                  Prefer to skip
+                </span>
+                </label>
+              </fieldset>
+              <label class="place-notes-label" for="benbang-notes">Notes (optional)</label>
+              <textarea class="place-notes" id="benbang-notes" name="benbang_notes" placeholder="Dietary restrictions, spice level…"></textarea>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <label class="field-label" for="food-dietary" style="margin-top: 4px;">Dietary needs (optional)</label>
+      <textarea class="place-notes" id="food-dietary" name="dietary_notes" placeholder="Allergies, vegetarian, halal, etc." style="margin-bottom: 0;"></textarea>
+  </section>
+
+  <section id="part-practical" class="section" aria-labelledby="practical-title">
+    <div class="section-head">
+      <div class="icon-wrap icon-wrap--practical" aria-hidden="true">
+        <svg><use href="#i-map"/></svg>
+      </div>
+      <div>
+        <p class="section-part">Part 5</p>
+        <h2 id="practical-title">Before You Arrive</h2>
+        <span>Practical notes for your trip</span>
+      </div>
+    </div>
+
+    <div class="practical-card">
+      <ul class="practical-list">
+        <li class="practical-item">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg><use href="#i-pin"/></svg>
+          </div>
+          <p>
+            <strong>Meeting point:</strong> Let me know where you're staying once you've booked your hotel —
+            we'll pick a convenient spot to meet.
+          </p>
+        </li>
+        <li class="practical-item">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg><use href="#i-message"/></svg>
+          </div>
+          <p>
+            <strong>WeChat:</strong> Feel free to contact me on WeChat anytime.
+          </p>
+        </li>
+        <li class="practical-item">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg><use href="#i-wallet"/></svg>
+          </div>
+          <p>
+            <strong>Payments:</strong> Cash is rarely used here. I recommend setting up Alipay or WeChat Pay
+            with your international credit card before you arrive. I'd be happy to help you with this if needed.
+          </p>
+        </li>
+        <li class="practical-item">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg><use href="#i-ticket"/></svg>
+          </div>
+          <p>
+            <strong>Shanghai Museum:</strong> Advance booking is required — I'll take care of the reservation.
+          </p>
+        </li>
+        <li class="practical-item">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg><use href="#i-car"/></svg>
+          </div>
+          <p>
+            <strong>Car experience:</strong> For the AITO M9 visit, I'll make the arrangements.
+          </p>
+        </li>
+        <li class="practical-item">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg><use href="#i-cloud-rain"/></svg>
+          </div>
+          <p>
+            <strong>Weather:</strong> Early June in Shanghai is hot, humid, and often rainy —
+            pack light clothing and bring an umbrella.
+          </p>
+        </li>
+      </ul>
+      <p class="practical-footer">
+        <span class="icon" aria-hidden="true"><svg><use href="#i-check-circle"/></svg></span>
+        <span>I'll get back to you with a proposed plan.</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="part-message" class="section" aria-labelledby="message-title">
+    <div class="section-head">
+      <div class="icon-wrap icon-wrap--message" aria-hidden="true">
+        <svg><use href="#i-message"/></svg>
+      </div>
+      <div>
+        <p class="section-part">Part 6</p>
+        <h2 id="message-title">Leave a Message</h2>
+        <span>Open question · optional</span>
+      </div>
+    </div>
+
+    <div class="message-board">
+      <p class="message-board-intro">
+        Anything we haven't covered? Share your thoughts, questions, or special requests here —
+        like topics you'd like to discuss, dietary needs, or places you're curious about.
+      </p>
+      <label class="sr-only" for="guest-message">Your message</label>
+      <textarea
+        class="message-board-field"
+        id="guest-message"
+        name="guest_message"
+        placeholder="Write your message here…"
+      ></textarea>
+      <p class="message-board-hint">Optional — your message will be included when you submit at the bottom.</p>
+    </div>
+  </section>
+
+  <div class="guide-submit">
+    <p id="guide-form-error" class="form-error" role="alert"></p>
+    <button type="submit" class="submit-btn" id="guide-submit-btn">Submit all preferences</button>
+  </div>
+  </form>
+
+  <div id="guide-form-success" class="form-success" role="status" aria-live="polite">
+    <div class="icon" aria-hidden="true"><svg><use href="#i-check-circle"/></svg></div>
+    <h3>Thank you!</h3>
+    <p>Your preferences have been sent to lianye.<br />I'll get back to you with a proposed plan.</p>
+  </div>
+
+  <footer>
+    <p>
+      <span class="icon" style="width:16px;height:16px;color:var(--accent);vertical-align:middle" aria-hidden="true">
+        <svg><use href="#i-heart"/></svg>
+      </span>
+      Looking forward to exploring the city with you.
+    </p>
+  </footer>
+
+  <script src="form-collector.js"></script>
+  <script>
+    FormCollector.bind(document.getElementById('shanghai-guide-form'), {
+      formId: 'shanghai-guide',
+      errorEl: document.getElementById('guide-form-error'),
+      successEl: document.getElementById('guide-form-success'),
+      submitBtn: document.getElementById('guide-submit-btn'),
+      hideFormOnSuccess: true,
+      validate: {
+        requireCheckboxGroup: ['availability'],
+        requireRadio: [
+          'bund_visit', 'museum_visit', 'yugarden_visit',
+          'm9_visit',
+          'hotpot_visit', 'sichuan_visit', 'benbang_visit',
+        ],
+        messages: {
+          availability: 'Please select at least one time slot.',
+          bund_visit: 'Please choose whether you would like to visit The Bund.',
+          museum_visit: 'Please choose whether you would like to visit Shanghai Museum.',
+          yugarden_visit: 'Please choose whether you would like to visit Yu Garden.',
+          m9_visit: 'Please let me know if you would like to try the AITO M9 experience.',
+          hotpot_visit: 'Please choose whether you would like to try hot pot.',
+          sichuan_visit: 'Please choose whether you would like to try Sichuan cuisine.',
+          benbang_visit: 'Please choose whether you would like to try benbang cuisine.',
+        },
+      },
+    });
+  </script>
+</body>
+</html>
