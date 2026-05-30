@@ -90,8 +90,9 @@ function doGet() {
     museum_visit     museum_notes
     yugarden_visit   yugarden_notes
 
-  Part 3 · 智驾体验
+  Part 3 · 科技体验
     m9_visit         m9_notes
+    robot_visit      robot_notes
 
   Part 4 · 美食
     hotpot_visit     hotpot_notes
@@ -108,7 +109,7 @@ function doGet() {
   必填校验（未填则无法提交）：
     availability
     bund_visit, museum_visit, yugarden_visit
-    m9_visit
+    m9_visit, robot_visit
     hotpot_visit, sichuan_visit, benbang_visit
 
 新增表单时：在 HTML 的 <form> 上加 data-form-id="你的表单名" 即可。

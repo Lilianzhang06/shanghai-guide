@@ -526,6 +526,9 @@
     .place--ev .place-visual {
       background: linear-gradient(135deg, #1a1f2e 0%, #2d3a4f 50%, #1e2838 100%);
     }
+    .place--robot .place-visual {
+      background: linear-gradient(135deg, #2a2438 0%, #4a3f5c 50%, #1e2838 100%);
+    }
     .place--4 .place-visual { background: #6b3a2a; }
     .place--6 .place-visual { background: #4a3728; }
     .place--7 .place-visual { background: #8b2a2a; }
@@ -1093,9 +1096,9 @@
   <header class="hero">
     <div class="hero-badge">
       <span class="icon" aria-hidden="true"><svg><use href="#i-map"/></svg></span>
-      Welcome to Shanghai
+      Welcome to China
     </div>
-    <h1>Welcome to China</h1>
+    <h1>Welcome to Shanghai</h1>
     <p>A little note from lianye — about Shanghai &amp; our schedule</p>
   </header>
 
@@ -1120,7 +1123,7 @@
     <nav class="quick-nav" aria-label="Page sections">
       <a href="#part-times"><span class="icon" aria-hidden="true"><svg><use href="#i-calendar-days"/></svg></span>Times</a>
       <a href="#part-places"><span class="icon" aria-hidden="true"><svg><use href="#i-landmark"/></svg></span>Places</a>
-      <a href="#part-driving"><span class="icon" aria-hidden="true"><svg><use href="#i-car"/></svg></span>Driving</a>
+      <a href="#part-driving"><span class="icon" aria-hidden="true"><svg><use href="#i-car"/></svg></span>Tech</a>
       <a href="#part-food"><span class="icon" aria-hidden="true"><svg><use href="#i-utensils"/></svg></span>Food</a>
       <a href="#part-practical"><span class="icon" aria-hidden="true"><svg><use href="#i-map"/></svg></span>Arrival</a>
       <a href="#part-message"><span class="icon" aria-hidden="true"><svg><use href="#i-message"/></svg></span>Message</a>
@@ -1396,8 +1399,8 @@
       </div>
       <div>
         <p class="section-part">Part 3</p>
-        <h2 id="driving-title">Autonomous Driving Experience</h2>
-        <span>AITO M9 · smart driving in Shanghai</span>
+        <h2 id="driving-title">Tech Experiences</h2>
+        <span>AITO M9 · Unitree Robotics · Shanghai</span>
       </div>
     </div>
 
@@ -1465,6 +1468,71 @@
               </fieldset>
               <label class="place-notes-label" for="m9-notes">Notes (optional)</label>
               <textarea class="place-notes" id="m9-notes" name="m9_notes" placeholder="e.g. motion sensitivity, preferred route…"></textarea>
+            </div>
+          </div>
+        </article>
+
+        <article class="place place--robot">
+          <div class="place-visual">
+            <img class="place-visual-img" src="pic/robot.png" alt="Unitree humanoid and quadruped robots at the Embodied AI Experience Center in Shanghai" loading="lazy" decoding="async" />
+            <div>
+              <span class="place-num">Unitree</span>
+              <p class="place-name-en">Unitree Robotics</p>
+            </div>
+          </div>
+          <div class="place-body">
+            <p class="place-cn">宇树科技 · Embodied AI</p>
+            <div class="place-rating" aria-label="5 star recommendation">
+              <span class="place-rating-label">Recommended</span>
+              <span class="place-stars" aria-hidden="true">
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+                <span class="star is-filled"><svg><use href="#i-star"/></svg></span>
+              </span>
+            </div>
+            <p class="place-desc">
+              <a href="https://www.unitree.com/cn" target="_blank" rel="noopener noreferrer">Unitree Robotics</a>
+              is a premier name in China's robotics industry. The brand gained national fame through multiple appearances on the CCTV Spring Festival Gala—the most-watched television event in China
+              (<a href="https://www.bilibili.com/video/BV13mZuBsEao/" target="_blank" rel="noopener noreferrer">2026 Gala — 武BOT full performance</a>).
+              Their humanoid robots delivered stunning synchronized performances, executing high-difficulty maneuvers like martial arts stunts and backflips,
+              which showcased cutting-edge motion control and AI integration.
+            </p>
+            <p class="place-desc">
+              Since Shanghai hosts Asia's first "Embodied AI" Experience Center by Unitree,
+              I thought you might find it interesting to visit and see these technologies in person.
+            </p>
+            <div class="place-tags">
+              <span class="tag tag--highlight">Humanoid robots</span>
+              <span class="tag">Embodied AI</span>
+              <span class="tag">Experience center</span>
+            </div>
+
+            <div class="place-feedback">
+              <p class="place-feedback-label">
+                <span class="icon" aria-hidden="true"><svg><use href="#i-help-circle"/></svg></span>
+                Would you like to visit?
+              </p>
+              <fieldset class="visit-options">
+                <legend class="sr-only">Unitree Robotics visit preference</legend>
+                <label class="visit-option visit-option--yes">
+                  <input type="radio" name="robot_visit" value="I'd like to visit" />
+                  <span class="visit-option-face">
+                    <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-check"/></svg></span>
+                    I'd like to visit
+                  </span>
+                </label>
+                <label class="visit-option visit-option--skip">
+                  <input type="radio" name="robot_visit" value="Prefer to skip" />
+                  <span class="visit-option-face">
+                    <span class="option-icon icon" aria-hidden="true"><svg><use href="#i-circle-x"/></svg></span>
+                    Prefer to skip
+                  </span>
+                </label>
+              </fieldset>
+              <label class="place-notes-label" for="robot-notes">Notes (optional)</label>
+              <textarea class="place-notes" id="robot-notes" name="robot_notes" placeholder="e.g. interest in humanoid vs quadruped demos…"></textarea>
             </div>
           </div>
         </article>
@@ -1807,7 +1875,7 @@
         requireCheckboxGroup: ['availability'],
         requireRadio: [
           'bund_visit', 'museum_visit', 'yugarden_visit',
-          'm9_visit',
+          'm9_visit', 'robot_visit',
           'hotpot_visit', 'sichuan_visit', 'benbang_visit',
         ],
         messages: {
@@ -1816,6 +1884,7 @@
           museum_visit: 'Please choose whether you would like to visit Shanghai Museum.',
           yugarden_visit: 'Please choose whether you would like to visit Yu Garden.',
           m9_visit: 'Please let me know if you would like to try the AITO M9 experience.',
+          robot_visit: 'Please let me know if you would like to visit the Unitree Experience Center.',
           hotpot_visit: 'Please choose whether you would like to try hot pot.',
           sichuan_visit: 'Please choose whether you would like to try Sichuan cuisine.',
           benbang_visit: 'Please choose whether you would like to try benbang cuisine.',
